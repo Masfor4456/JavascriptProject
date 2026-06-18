@@ -1,14 +1,28 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="Personal portfolio webpage">
+    <meta name="keywords" content="HTML, portfolio, projects">
+    <meta name="author" content="Mason Ford">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mason Ford Portfolio</title>
+
+```
+<title>Mason Ford Portfolio</title>
+
+<link rel="stylesheet" href="styles.css">
+```
+
 </head>
+
 <body>
 
-    <!-- Welcome message updated by JavaScript -->
-    <h1 id="welcomeMessage">Welcome to my Portfolio</h1>
+```
+<!-- Header Section -->
+<header>
+    <h1 id="welcomeMessage">Welcome to My Portfolio</h1>
 
     <!-- Navigation Menu -->
     <nav>
@@ -18,18 +32,29 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
+</header>
+
+<!-- Main Content -->
+<main>
 
     <!-- About Section -->
     <section id="about">
         <h2>About Me</h2>
+
         <p>
-            Hello! My name is Mason Ford. I am currently pursuing a Bachelor's
-            degree in Software Development and enjoy learning programming,
-            web development, databases, and game development.
+            My name is Mason Ford and I am currently pursuing a Bachelor's
+            degree in Software Development.
         </p>
+
         <p>
-            My long-term goal is to become a professional software developer
-            and eventually create audio-focused games and software projects.
+            I enjoy programming, web development, database design, and
+            software engineering. I am particularly interested in game
+            development and audio-focused applications.
+        </p>
+
+        <p>
+            This portfolio showcases projects and coursework completed
+            during my studies as I continue building my technical skills.
         </p>
     </section>
 
@@ -37,55 +62,82 @@
     <section id="projects">
         <h2>Projects</h2>
 
-        <a href="https://github.com/Masfor4456" target="_blank">
-            <img src="https://via.placeholder.com/200x150?text=Project+1"
-                 alt="Project 1">
-        </a>
+        <div class="project-gallery">
 
-        <a href="https://github.com/Masfor4456" target="_blank">
-            <img src="https://via.placeholder.com/200x150?text=Project+2"
-                 alt="Project 2">
-        </a>
+            <div class="project-card">
+                <a href="https://github.com/Masfor4456" target="_blank">
+                    <img src="https://via.placeholder.com/250x150?text=Audio+Sandbox"
+                         alt="Audio Sandbox">
+                </a>
+                <h3>Audio Sandbox</h3>
+                <p>Audio experimentation and sound processing project.</p>
+            </div>
 
-        <a href="https://github.com/Masfor4456" target="_blank">
-            <img src="https://via.placeholder.com/200x150?text=Project+3"
-                 alt="Project 3">
-        </a>
+            <div class="project-card">
+                <a href="https://github.com/Masfor4456" target="_blank">
+                    <img src="https://via.placeholder.com/250x150?text=AI+Assistant"
+                         alt="AI Assistant">
+                </a>
+                <h3>AI Chat Assistant</h3>
+                <p>Natural language chatbot application project.</p>
+            </div>
 
-        <p>Click any project image to visit my GitHub profile.</p>
+            <div class="project-card">
+                <a href="https://github.com/Masfor4456" target="_blank">
+                    <img src="https://via.placeholder.com/250x150?text=Calculator"
+                         alt="Ultimate Calculator">
+                </a>
+                <h3>Ultimate Calculator</h3>
+                <p>Calculator application with multiple functions.</p>
+            </div>
+
+        </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact">
         <h2>Contact Me</h2>
 
-        <form>
-            <label for="name">Name:</label><br>
-            <input type="text" id="name" name="name"><br><br>
+        <form class="contact-form">
 
-            <label for="email">Email Address:</label><br>
-            <input type="email" id="email" name="email"><br><br>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
 
-            <label for="subject">Subject:</label><br>
-            <input type="text" id="subject" name="subject"><br><br>
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
 
-            <label for="message">Message:</label><br>
-            <textarea id="message" name="message" rows="5" cols="40"></textarea><br><br>
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject">
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5"></textarea>
 
             <input type="submit" value="Send Message">
+
         </form>
     </section>
 
-    <script>
-        // Prompt the user for their name
-        let userName = prompt("Please enter your name:");
+</main>
 
-        // Update the welcome message dynamically
-        if (userName && userName.trim() !== "") {
-            document.getElementById("welcomeMessage").innerHTML =
-                "Welcome to Mason Ford's Portfolio, " + userName + "!";
-        }
-    </script>
+<!-- Footer -->
+<footer>
+    <p>&copy; 2026 Mason Ford Portfolio</p>
+</footer>
+
+<script>
+
+    // Prompt the user to enter their name
+    let userName = prompt("Please enter your name:");
+
+    // Display a personalized welcome message
+    if (userName && userName.trim() !== "") {
+        document.getElementById("welcomeMessage").innerHTML =
+            "Welcome to Mason Ford's Portfolio, " + userName + "!";
+    }
+
+</script>
+```
 
 </body>
+
 </html>
