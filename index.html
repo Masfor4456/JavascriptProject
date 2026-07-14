@@ -87,6 +87,7 @@
 <input id="subject">
 <label>Message</label>
 <textarea id="message"></textarea>
+<p id="statusMessage"></p>
 <input type="submit" id="submitBtn" value="Send Message">
 </form>
 </section>
@@ -118,17 +119,54 @@ if(projectCount<3){
 }else{
  university.style.display="none";
 }
+ 
+// Dynamically create and add a new project description
+const recentProject = document.createElement("p");
 
+recentProject.textContent =
+    "Recent Project: This portfolio was expanded using JavaScript DOM manipulation, event listeners, and interactive features.";
+
+document.getElementById("projects").appendChild(recentProject);
+ 
+ // Modify existing page elements using selectors
+const aboutHeading = document.querySelector("#about h2");
+aboutHeading.textContent = "About Mason Ford";
+
+const projectsSection = document.getElementById("projects");
+projectsSection.style.border = "3px solid #2f5d8a";
 // Dark mode
 document.getElementById("darkModeToggle").addEventListener("change",()=>{
  document.body.classList.toggle("dark-mode");
 });
 
-// Form interaction
-document.getElementById("submitBtn").addEventListener("click",function(event){
- event.preventDefault();
- const name=document.getElementById("name").value;
- alert("Thank you, "+name+", your message has been sent!");
+// Form interaction with delayed confirmation
+document.querySelector(".contact-form").addEventListener("submit", function (event) {
+
+    // Prevent page refresh
+    event.preventDefault();
+
+    // Get or create the status message
+    let status = document.getElementById("statusMessage");
+
+    if (!status) {
+        status = document.createElement("p");
+        status.id = "statusMessage";
+        this.appendChild(status);
+    }
+
+    // Display loading message
+    status.textContent = "Sending message...";
+
+    // Wait two seconds before confirming
+    setTimeout(() => {
+
+        const name = document.getElementById("name").value;
+
+        status.textContent =
+            "Message sent successfully! Thank you, " + name + "!";
+
+    }, 2000);
+
 });
 </script>
 
